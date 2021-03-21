@@ -76,10 +76,12 @@ const find_member = async() => {
     })
 
     if (list.length < 1) {
-        document.querySelector("#find_res").textContent = "該当するユーザが見つかりませんでした。"
+        document.querySelector("#find_res").textContent = "<p>該当するユーザが見つかりませんでした。</p>"
+        return
     }
 
     document.querySelector("#find_res").innerHTML =
+        '<p>以下から目的のユーザを選択してください。</p>' +
         '<table class="table">' +
         '<thead>' +
         '<tr>' +
@@ -94,10 +96,6 @@ const find_member = async() => {
 }
 
 const add_role = async(user_id) => {
-    if (!user_id) {
-        user_id = document.querySelector("#user_id").value;
-    }
-
     let res = await fetch(url_make({ "Action": "AddRole" }), {
         method: "POST",
         headers: {
