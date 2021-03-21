@@ -76,7 +76,7 @@ const find_member = async() => {
     })
 
     if (list.length < 1) {
-        document.querySelector("#find_res").textContent = "<p>該当するユーザが見つかりませんでした。</p>"
+        document.querySelector("#find_res").textContent = "該当するユーザが見つかりませんでした。"
         return
     }
 
