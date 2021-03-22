@@ -9,6 +9,7 @@ Nginxなり、Apacheなりの認証システムをくぐれる人だけロール
     - [概要](#概要)
     - [目次](#目次)
     - [使い方](#使い方)
+    - [事前準備](#事前準備)
     - [設定](#設定)
 
 <!-- /TOC -->
@@ -19,13 +20,18 @@ Nginxなり、Apacheなりの認証システムをくぐれる人だけロール
 $ go build -o index.up main/*
 ```
 
+## 事前準備
+- DiscordAppの作成
+- Botを作成した上で、`ManageRole`の権限を持たせる
+- Bot Tokenをメモ
+
 ## 設定
 index.upと同階層に次の`settings.json`を用意。
 
 ```json
 {
     "Discord": {
-        "Token": "DiscordBotToken",
+        "Token": "DiscordBotToken(さっきの)",
         "GuildID": "******************",
         "RoleID": "******************"
     }
